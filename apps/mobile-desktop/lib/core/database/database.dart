@@ -50,5 +50,7 @@ class AppDatabase extends _$AppDatabase {
 class _$AppDatabase extends GeneratedDatabase {
   _$AppDatabase(QueryExecutor e) : super(e);
   @override
+  int get schemaVersion => 1;
+  @override
   Iterable<TableInfo<Table, Object?>> get allTables => [];
 }
