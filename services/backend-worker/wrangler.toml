@@ -1,0 +1,22 @@
+name = "enterprise-cloud-storage-worker"
+main = "src/index.ts"
+compatibility_date = "2024-04-05"
+compatibility_flags = ["nodejs_compat"]
+
+# R2 Bucket for file chunks
+[[r2_buckets]]
+binding = "STORAGE_BUCKET"
+bucket_name = "enterprise-storage-chunks"
+
+# KV Namespace for rate limiting (if requested, though I'll just declare it)
+# [[kv_namespaces]]
+# binding = "RATE_LIMITER"
+# id = "..."
+
+# Cron triggers for Garbage Collection
+[triggers]
+crons = ["0 * * * *"] # Run every hour
+
+[vars]
+# SUPABASE_URL = "..."
+# SUPABASE_SERVICE_ROLE_KEY = "..."
